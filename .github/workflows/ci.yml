@@ -1,0 +1,24 @@
+name: CI - Minimal Test
+
+on:
+  push:
+    branches: [ main, master ]
+  workflow_dispatch: {}
+
+jobs:
+  test:
+    runs-on: ubuntu-latest
+    permissions:
+      contents: write
+
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
+      - name: 24ds1000061@ds.study.iitm.ac.in
+        run: |
+          echo "Hello, world!"
+
+      - name: Confirm run
+        run: |
+          echo "Workflow executed successfully."
